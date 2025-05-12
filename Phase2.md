@@ -14,9 +14,9 @@ ArgoCD にて自動デプロイするオリジナルの Web ページ元の mani
 ※本レポジトリの manifest フォルダに格納済
 
 <pre><code>
-└── manifest
-├── depl.yaml
-└── service.yaml
+├── manifest
+│   ├── depl.yaml
+│   └── service.yaml
 </code></pre>
 
 depl.yaml → Web ページ作成用の Deployment に関する内容を記述  
