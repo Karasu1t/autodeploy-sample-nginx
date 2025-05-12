@@ -10,10 +10,10 @@ Helm を使用して Argo CD を Kubernetes クラスター上にデプロイし
 
 #### 1. Helm レポジトリの追加と更新
 
-<pre><code>```bash  
+<pre><code>
 helm repo add argo https://argoproj.github.io/argo-helm  
 helm repo update
-``` </code></pre>
+</code></pre>
 
 #### 2. Helm レポジトリの追加と更新
 
@@ -27,7 +27,7 @@ helm install argo-cd argo/argo-cd --namespace argocd --create-namespace
 
 Argo CD の Web UI にローカルからアクセスできるようにポートフォワーディングを行う
 
-<pre><code>  
+<pre><code>
 kubectl port-forward svc/argo-cd-argocd-server -n argocd 8080:443
 </code></pre>
 
@@ -35,8 +35,8 @@ kubectl port-forward svc/argo-cd-argocd-server -n argocd 8080:443
 
 以下のコマンドで初期ログインパスワードを取得する
 
-<pre><code>  
-kubectl get secret argocd-initial-admin-secret -n argocd -o jsonpath="{.data.password}" | base64 -d  
+<pre><code>
+kubectl get secret argocd-initial-admin-secret -n argocd -o jsonpath="{.data.password}" | base64 -d
 </code></pre>
 
 #### 5. Argo CD UI にアクセスしてログイン
