@@ -12,9 +12,12 @@ ArgoCD にて自動デプロイするオリジナルの Web ページ元の mani
 #### 1. manifest ファイルの作成
 
 ※本レポジトリの manifest フォルダに格納済
+
+<pre><code>
 └── manifest
 ├── depl.yaml
 └── service.yaml
+</code></pre>
 
 depl.yaml → Web ページ作成用の Deployment に関する内容を記述  
 service.yaml → Pod に接続するための SVC に関する内容を記述
