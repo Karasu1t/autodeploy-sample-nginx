@@ -37,4 +37,6 @@ kubectl get secret argocd-initial-admin-secret -n argocd -o jsonpath="{.data.pas
 
 http://localhost:8080
 
+![ArgoCDログイン画面](picture/1-1.argocd_sample.png)  
+![ArgoCDコンソール画面](picture/1-2.argocd_console_sample.png)  
 ---
