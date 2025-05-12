@@ -79,7 +79,7 @@ status:
 以下のコマンドで manifest ファイルを apply する
 
 <pre><code>
-kubectl apply -f <<yamlファイル格納ディレクトリパス>>
+kubectl apply -f \<yamlファイル格納ディレクトリパス\>
 </code></pre>
 
 #### 3. Web ページへの接続確認
