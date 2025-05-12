@@ -48,6 +48,8 @@ spec:
 status: {}
 </code></pre>
 
+◆service.yaml
+
 <pre><code>
 apiVersion: v1
 kind: Service
@@ -68,3 +70,23 @@ spec:
 status:
   loadBalancer: {}
 </code></pre>
+
+#### 2. manifest ファイルの apply
+
+以下のコマンドで manifest ファイルを apply する
+
+<pre><code>
+kubectl apply -f <yamlファイル格納ディレクトリパス>
+</code></pre>
+
+#### 3. Web ページへの接続確認
+
+ブラウザから Web ページが参照できることの確認
+
+<pre><code>
+http://<eth0のIPアドレス>:30080/  
+</code></pre>
+
+![Webページ画面](picture/2-1.web_sample.png)
+
+---
