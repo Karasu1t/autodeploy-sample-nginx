@@ -40,3 +40,4 @@ GitHub 上に以下のリポジトリを作成しておく：
 各フェーズの詳細手順や設定内容については、以降のセクションに記載。
 
 [Phase 1 - Argo CD を Helm でデプロイする](https://github.com/Karasu1t/autodeploy-sample-nginx/blob/main/Phase1.md)
+[Phase 2 - マニフェストファイルを作成する](https://github.com/Karasu1t/autodeploy-sample-nginx/blob/main/Phase2.md)
