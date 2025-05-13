@@ -42,3 +42,4 @@ GitHub 上に以下のリポジトリを作成しておく：
 [Phase 1 - Argo CD を Helm でデプロイする](https://github.com/Karasu1t/autodeploy-sample-nginx/blob/main/Phase1.md)  
 [Phase 2 - マニフェストファイルを作成する](https://github.com/Karasu1t/autodeploy-sample-nginx/blob/main/Phase2.md)  
 [Phase 3 - in-cluster 状態で Argo CD から自動デプロイする](https://github.com/Karasu1t/autodeploy-sample-nginx/blob/main/Phase3.md)  
+[Phase 4 - minikube 上に Argo CD から自動デプロイする](https://github.com/Karasu1t/autodeploy-sample-nginx/blob/main/Phase4.md)
