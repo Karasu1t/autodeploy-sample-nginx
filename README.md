@@ -35,7 +35,7 @@ GitHub 上に以下のリポジトリを作成しておく：
 3. **in-cluster 状態で Argo CD から自動デプロイができること**
 4. **外部クラスター（minikube）上で Argo CD から自動デプロイできること**
 5. **nginx の index.html のソースコードを更新して自動デプロイできること**
-6. **nginx の index.html のソースコードを更新して自動デプロイできること**
+6. **configmap を自動生成できること**
 
 ---
 
@@ -46,4 +46,4 @@ GitHub 上に以下のリポジトリを作成しておく：
 [Phase 3 - in-cluster 状態で Argo CD から自動デプロイする](https://github.com/Karasu1t/autodeploy-sample-nginx/blob/main/Phase3.md)  
 [Phase 4 - minikube 上に Argo CD から自動デプロイする](https://github.com/Karasu1t/autodeploy-sample-nginx/blob/main/Phase4.md)
 [Phase 5 - nginx の index.html を更新し、自動デプロイする](https://github.com/Karasu1t/autodeploy-sample-nginx/blob/main/Phase5.md)
-[Phase 6 - configmapを自動生成し、生成後にデプロイする仕組みを実装する](https://github.com/Karasu1t/autodeploy-sample-nginx/blob/main/Phase6.md)
+[Phase 6 - configmap を自動生成する](https://github.com/Karasu1t/autodeploy-sample-nginx/blob/main/Phase6.md)

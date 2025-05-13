@@ -1,4 +1,4 @@
-## フェーズ 6：configmap を自動生成し、生成後にデプロイする仕組みを実装する
+## フェーズ 6：configmap を自動生成する
 
 ### 概要
 
@@ -80,8 +80,14 @@ jobs:
 
 #### 4. GithubActions の Workflow が正常に動作していることを確認
 
+![workflow](picture/6-4.workflow.png)
+
 #### 5. configmap.yaml が作成されていることを確認
+
+![createconfigmap](picture/6-5.create_configmap.png)
 
 #### 6. ArgoCD 上で Sync されていることを確認
 
 #### 7. ブラウザ上で Web ページが新しくなっていることを確認
+
+![screen](picture/6-7.screen.png)
