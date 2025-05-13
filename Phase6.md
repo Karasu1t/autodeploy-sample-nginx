@@ -14,7 +14,8 @@ GithubActions を利用して実装する
 #### 1. ArgoCD の AutoDeploy を無効化
 
 自動デプロイを有効にしたままだと、GithubActions での Configmap 生成前にデプロイされてしまうため無効化する  
-なお、後続の手順の設定にて Configmap 生成後の Sync も GithubActions 上で実施する
+※本来であれば、上記の後に GithubActions にて ArgoCD の sync を実行したいが、argoCD を外部公開しないため GithubActions から  
+実行できないことから手動でのデプロイとする
 
 <pre><code>
 GitHub のリポジトリにアクセス
@@ -47,15 +48,32 @@ tree 上で src フォルダを作成し、その中に差し替え用の index.
 ◆generate-configmap.yaml
 
 <pre><code>
+name: CI for ArgoCD App
 
-</code></pre>
+on:
+  push:
+    branches: [main]
 
-#### 3. Github の Secret に以下の設定を追加
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
 
-<pre><code>
-ARGOCD_SERVER・・・ArgoCDのサーバ名(or IPアドレス)
-ARGOCD_USERNAME・・・ArgoCDのユーザー名
-ARGOCD_PASSWORD・・・ArgoCDのユーザーパスワード
+      - name: Generate ConfigMap YAML from index.html
+        run: |
+          kubectl create configmap cm-nginx-index \
+            --from-file=index.html=./src/index.html \
+            --dry-run=client -o yaml > ./manifest/cm-nginx-index.yaml
+
+      - name: Commit updated manifest
+        run: |
+          git config --global user.name 'GitHub Actions'
+          git config --global user.email 'actions@github.com'
+          git add ./manifest/cm-nginx-index.yaml
+          git commit -m "Auto-generate ConfigMap from index.html" || echo "No changes to commit"
+          git push
 </code></pre>
 
 #### 3. 更新したソースコード一式を Github レポジトリに Push
