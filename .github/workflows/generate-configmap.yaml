@@ -1,0 +1,38 @@
+name: CI for ArgoCD App
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Generate ConfigMap YAML from index.html
+        run: |
+          kubectl create configmap cm-nginx-index \
+            --from-file=index.html=./src/index.html \
+            --dry-run=client -o yaml > ./manifest/cm-nginx-index.yaml
+
+      # - name: Lint HTML
+      #   run: |
+      #     npm install -g htmlhint
+      #     htmlhint src/index.html
+
+      # - name: Test in nginx container
+      #   run: |
+      #     docker run -d -v ${{ github.workspace }}/src:/usr/share/nginx/html --name test-nginx -p 8080:80 nginx
+      #     sleep 5
+      #     curl -f http://localhost:8080 | grep "<html>"
+      #     docker rm -f test-nginx
+
+      - name: Commit updated manifest
+        run: |
+          git config --global user.name 'GitHub Actions'
+          git config --global user.email 'actions@github.com'
+          git add ./manifest/cm-nginx-index.yaml
+          git commit -m "Auto-generate ConfigMap from index.html" || echo "No changes to commit"
+          git push

@@ -3,60 +3,73 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ようこそ</title>
+    <title>Welcome to My Site</title>
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap"
       rel="stylesheet"
     />
     <style>
       body {
         margin: 0;
-        padding: 0;
         font-family: "Roboto", sans-serif;
-        background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
+        background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
         color: #333;
         display: flex;
-        align-items: center;
         justify-content: center;
+        align-items: center;
         height: 100vh;
       }
 
-      .container {
-        background-color: #fff;
-        padding: 40px 60px;
-        border-radius: 16px;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      .card {
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        padding: 40px;
         text-align: center;
         max-width: 500px;
+        width: 90%;
+        transition: transform 0.3s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
       }
 
       h1 {
-        font-size: 2.5rem;
+        font-size: 2.5em;
         margin-bottom: 20px;
-        color: #222;
+        color: #2a4365;
       }
 
       p {
-        font-size: 1.1rem;
-        line-height: 1.6;
-        color: #555;
+        font-size: 1.1em;
+        color: #4a5568;
       }
 
-      @media (max-width: 600px) {
-        .container {
-          padding: 30px 20px;
-        }
+      .button {
+        margin-top: 30px;
+        display: inline-block;
+        background: #3182ce;
+        color: #fff;
+        padding: 12px 24px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: background 0.3s ease;
+      }
 
-        h1 {
-          font-size: 2rem;
-        }
+      .button:hover {
+        background: #2b6cb0;
       }
     </style>
   </head>
   <body>
-    <div class="container">
-      <h1>ようこそ</h1>
-      <p>このページは nginx によってホスティングされています。</p>
+    <div class="card">
+      <h1>ようこそ！</h1>
+      <p>
+        このサイトはモダンなデザインで構築されています。ごゆっくりご覧ください。
+      </p>
+      <a href="#!" class="button">もっと見る</a>
     </div>
   </body>
 </html>
