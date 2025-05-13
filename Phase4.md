@@ -105,7 +105,7 @@ http://localhost:30080
 CLI 上で kubectl get pod -o wide で見ると、node が docker-desktop になっている。
 
 ![ArgoCD_Tips1](picture/tips-1.getpod.png)
-![ArgoCD_Tips2](picture/tips-1.getpod.png)
+![ArgoCD_Tips2](picture/tips-2.getpod.png)
 
 ChatGPT に聞いてみました。
 

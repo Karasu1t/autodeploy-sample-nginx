@@ -18,7 +18,18 @@ spec:
         app: deployment-nginx
     spec:
       containers:
-      - image: nginx
-        name: nginx
-        resources: {}
+        - image: nginx
+          name: nginx
+          volumeMounts:
+            - name: index-html
+              mountPath: /usr/share/nginx/html/index.html
+              subPath: index.html
+          resources: {}
+  volumes:
+    - name: index-html
+      configMap:
+        name: cm-nginx-index
+        items:
+          - key: index.html
+            path: index.html
 status: {}
