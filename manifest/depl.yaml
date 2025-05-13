@@ -25,11 +25,11 @@ spec:
               mountPath: /usr/share/nginx/html/index.html
               subPath: index.html
           resources: {}
-  volumes:
-    - name: index-html
-      configMap:
-        name: cm-nginx-index
-        items:
-          - key: index.html
-            path: index.html
+      volumes:
+        - name: index-html
+          configMap:
+            name: cm-nginx-index
+            items:
+              - key: index.html
+                path: index.html
 status: {}
