@@ -59,6 +59,7 @@ kubectl config set-cluster minikube --server=http://&lt;WSLのIPアドレス&gt;
 
 以下のコマンドで minikube の API サーバーへ HTTP 経由で外部公開する  
 ※minikube の Kubernetes API サーバーに、Docker 上の Argo CD コンテナから直接アクセスする手段がないため暫定的に実施
+※minikube のコンテキストにスイッチしていること
 
 <pre><code>
 kubectl proxy --address='0.0.0.0' --disable-filter=true
@@ -96,12 +97,15 @@ argocd cluster add minikube
 
 ![ArgoCD_Syned](picture/4-11.ArgoCD_Synced.png)
 
-以下の URL をブラウザで開き nginx の画面が表示されることを確認
+以下のコマンドでブラウザで開き nginx の画面が表示されることを確認
 
-http://localhost:30080
+<pre><code>
+minikube service nginx-service
+</code></pre>
 
 #### Tips
 
+docker-desktop にコンテキストスイッチした状態で proxy を外部公開すると  
 CLI 上で kubectl get pod -o wide で見ると、node が docker-desktop になっている。
 
 ![ArgoCD_Tips1](picture/tips-1.getpod.png)

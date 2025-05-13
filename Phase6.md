@@ -16,6 +16,18 @@ GithubActions を利用して実装する
 自動デプロイを有効にしたままだと、GithubActions での Configmap 生成前にデプロイされてしまうため無効化する  
 なお、後続の手順の設定にて Configmap 生成後の Sync も GithubActions 上で実施する
 
+<pre><code>
+GitHub のリポジトリにアクセス
+
+「Settings」→「Actions」→「General」
+
+Workflow permissions セクションにて：
+
+✅ Read and write permissions を選択
+
+✅ Save
+</code></pre>
+
 #### 2. GithubActions 用の yaml ファイルを作成、および configmap 用の yaml ファイルを削除
 
 tree 上で src フォルダを作成し、その中に差し替え用の index.html ファイルを格納  
@@ -37,3 +49,21 @@ tree 上で src フォルダを作成し、その中に差し替え用の index.
 <pre><code>
 
 </code></pre>
+
+#### 3. Github の Secret に以下の設定を追加
+
+<pre><code>
+ARGOCD_SERVER・・・ArgoCDのサーバ名(or IPアドレス)
+ARGOCD_USERNAME・・・ArgoCDのユーザー名
+ARGOCD_PASSWORD・・・ArgoCDのユーザーパスワード
+</code></pre>
+
+#### 3. 更新したソースコード一式を Github レポジトリに Push
+
+#### 4. GithubActions の Workflow が正常に動作していることを確認
+
+#### 5. configmap.yaml が作成されていることを確認
+
+#### 6. ArgoCD 上で Sync されていることを確認
+
+#### 7. ブラウザ上で Web ページが新しくなっていることを確認

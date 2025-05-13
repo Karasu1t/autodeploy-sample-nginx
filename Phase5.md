@@ -147,7 +147,6 @@ namespace: default
 #### 4. ArgoCD で自動デプロイされていることを確認する
 ※Pushしてから数分待つ必要がある
 ※予めAutoSyncを有効化してください
-※ブラウザのキャッシュが残っている可能性があるので、http://localhost:30080を開いたら更新する  
 
 ![AutoSynced](picture/5-4.APP_status.png)
 ![Screen](picture/5-4.APP_screen.png)
